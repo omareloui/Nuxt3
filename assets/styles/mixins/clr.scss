@@ -27,7 +27,7 @@
   $lightness: null,
   $important: false
 ) {
-  @if list.index(main light dark invert fade, $type) {
+  @if list.index(main light dark invert, $type) {
     $type: text-#{$type};
   }
   @include clr($type, color, $opacity, $lightness, $important);

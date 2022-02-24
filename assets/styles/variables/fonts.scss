@@ -2,11 +2,11 @@
 @use "../mixins/generate-variables" as *;
 
 $fonts-names: (
-  raleway: '"Raleway", sans-serif',
+  poppins: '"Poppins", sans-serif',
 );
 
 $fonts-families: (
-  main: map.get($fonts-names, raleway),
+  main: map.get($fonts-names, poppins),
 );
 
 $fonts-weights: (
