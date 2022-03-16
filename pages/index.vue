@@ -4,28 +4,24 @@ const themeStore = useThemeStore();
 </script>
 
 <template>
-  <div>
+  <Container tag="main" class="homepage">
     <button @click="themeStore.toggleTheme">Toggle Theme</button>
-  </div>
+  </Container>
 </template>
 
-<style scoped lang="scss">
-@use "~~/assets/styles/mixins" as *;
+<style scoped lang="sass">
+@use "~~/assets/styles/mixins" as *
 
-div {
-  @include h(100vh);
-  @include grid($center: true);
+.homepage
+  +h(100vh)
+  +grid($center: true)
 
-  button {
-    border: none;
-
-    @include ff(main);
-
-    @include clickable;
-    @include br-lg;
-    @include clr-bg(invert);
-    @include clr-txt(invert);
-    @include pa(20px);
-  }
-}
+  button
+    +brdr(none)
+    +ff(main)
+    +clickable
+    +br-lg
+    +clr-bg(invert)
+    +clr-txt(invert)
+    +pa(20px)
 </style>
