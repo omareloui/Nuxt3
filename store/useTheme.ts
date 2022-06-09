@@ -20,7 +20,7 @@ export const useThemeStore = defineStore("theme", {
       this.changeTheme(cookie);
     },
 
-    changeTheme(theme: Theme) {
+    async changeTheme(theme: Theme) {
       this.currentTheme = theme;
       this.setThemeToCookie(theme);
       this.updateHtmlAttrs();
@@ -31,7 +31,7 @@ export const useThemeStore = defineStore("theme", {
     },
 
     updateHtmlAttrs() {
-      useMeta({
+      useHead({
         htmlAttrs: {
           theme: this.htmlAttr,
         },
@@ -49,7 +49,8 @@ export const useThemeStore = defineStore("theme", {
 
     getThemeFromCookie() {
       const cookies = Cookie();
-      const cookie = cookies.get(THEME_COOKIE_NAME);
+      const cookie =
+        useCookie(THEME_COOKIE_NAME).value || cookies.get(THEME_COOKIE_NAME);
       if (!cookie) this.setThemeToCookie("default");
       return cookie as Theme;
     },

@@ -1,5 +1,5 @@
 <template>
-  <LayoutsWrapper>
+  <div>
     <slot></slot>
-  </LayoutsWrapper>
+  </div>
 </template>
