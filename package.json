@@ -4,12 +4,14 @@
     "dev": "nuxi dev",
     "build": "nuxi build",
     "start": "node .output/server/index.mjs",
+    "test": "nuxi test",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:check": "eslint --print-config .eslintrc.json",
     "format": "prettier --write \"{,!(node_modules|.nuxt|.output)/**/}*.{[t|j]s,vue,scss}\""
   },
   "devDependencies": {
+    "@nuxt/test-utils-edge": "3.0.0-rc.3-27579668.27a0084",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^7.32.0",
@@ -26,7 +28,8 @@
     "prettier": "^2.4.1",
     "sass": "^1.43.2",
     "sass-loader": "^12.2.0",
-    "typescript": "^4.7.3"
+    "typescript": "^4.7.3",
+    "vitest": "^0.14.1"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.1.8",
